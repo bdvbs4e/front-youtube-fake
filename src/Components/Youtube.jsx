@@ -23,7 +23,7 @@ export default function YoutubePage({user}) {
     // Fetch the uploaded videos from the server
     const fetchVideos = async () => {
       try {
-        const response = await fetch('https://back-youtube-fake.vercel.app/getMyVideos', {
+        const response = await fetch('https://back-youtube-fake.vercel.app/videos/getMyVideos', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ userId: user._id }),
@@ -44,7 +44,7 @@ export default function YoutubePage({user}) {
   useEffect(() => {
     const fetchOtherVideos = async () => {
       try {
-        const response = await fetch('https://back-youtube-fake.vercel.app/getOtherVideos', {
+        const response = await fetch('https://back-youtube-fake.vercel.app/videos/getOtherVideos', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ userId: user._id }),
